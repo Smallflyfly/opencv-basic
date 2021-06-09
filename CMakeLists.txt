@@ -10,7 +10,7 @@ set(OpenCV_FOUND 1)
 include_directories(${OpenCV_INCLUDE_DIRS})
 
 add_executable(opencv_basic
-        camera.cpp)
+        warpAffine.cpp)
 
 target_link_libraries(opencv_basic ${OpenCV_LIBS})
 

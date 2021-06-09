@@ -15,16 +15,26 @@ using namespace cv;
 
 
 int main() {
-    VideoCapture cap;
-    cap.open(0);
+//    VideoCapture cap;
+//    cap.open(0);
+    VideoCapture cap(0);
     Mat frame;
+    int h = cap.get(CV_CAP_PROP_FRAME_HEIGHT);
+    int w = cap.get(CV_CAP_PROP_FRAME_WIDTH);
+    cout << h << " " << w << endl;
     while (cap.isOpened()) {
         cap >> frame;
         imshow("camera", frame);
         if (waitKey(1) == 'q') {
             break;
         }
+
+        int value = frame.at<uchar>(10, 10);
+        cout << value << endl;
+
     }
     destroyAllWindows();
     cap.release();
+
+    return 0;
 }
