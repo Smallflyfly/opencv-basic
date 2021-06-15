@@ -25,7 +25,6 @@ void drawHist(Mat hist, int type, string name) {
 }
 
 int main() {
-    // circle
     Mat gray1 = imread("test.jpg", IMREAD_GRAYSCALE);
 
     Mat gray2;
